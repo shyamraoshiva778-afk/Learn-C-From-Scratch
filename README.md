@@ -862,7 +862,209 @@ One Two Three
 * Many fixed choices → **switch case**
 
 ---
+## 🔁 LESSON 6 – LOOPS IN C
 
+### 📌 What is a Loop?
+
+A **loop** is used when you want to **repeat the same block of code multiple times** without writing it again and again.
+
+👉 Example:
+Printing numbers from 1 to 10
+Printing a table
+Repeating input/output
+
+---
+
+## 🔹 Types of Loops in C
+
+C language has **3 main loops**:
+
+1. **while loop**
+2. **do–while loop**
+3. **for loop**
+
+---
+
+## 1️⃣ while Loop
+
+### 📌 Syntax
+
+```c
+while(condition) {
+    // code to repeat
+}
+```
+
+### 📌 How it works
+
+* First checks the **condition**
+* If condition is **true**, code runs
+* Repeats until condition becomes **false**
+
+### ✅ Example: Print 1 to 5
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    while(i <= 5) {
+        printf("%d\n", i);
+        i++;
+    }
+
+    return 0;
+}
+```
+
+📌 **Important**
+
+* If condition is false initially → loop will **not run**
+* Increment/decrement is **mandatory** to avoid infinite loop
+
+---
+
+## 2️⃣ do–while Loop
+
+### 📌 Syntax
+
+```c
+do {
+    // code to repeat
+} while(condition);
+```
+
+⚠️ Semicolon `;` is **required**
+
+### 📌 How it works
+
+* Executes code **at least once**
+* Condition is checked **after execution**
+
+### ✅ Example
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i = 1;
+
+    do {
+        printf("%d\n", i);
+        i++;
+    } while(i <= 5);
+
+    return 0;
+}
+```
+
+📌 Even if condition is false, loop runs **one time**
+
+---
+
+## 🔍 while vs do–while
+
+| Feature           | while       | do–while   |
+| ----------------- | ----------- | ---------- |
+| Condition check   | Before loop | After loop |
+| Minimum execution | 0 times     | 1 time     |
+| Semicolon         | ❌ No        | ✅ Yes      |
+
+---
+
+## 3️⃣ for Loop
+
+### 📌 Syntax
+
+```c
+for(initialization; condition; increment/decrement) {
+    // code
+}
+```
+
+### 📌 Best for
+
+* Known number of repetitions
+* Tables
+* Counters
+
+### ✅ Example: Print 1 to 5
+
+```c
+#include <stdio.h>
+
+int main() {
+    int i;
+
+    for(i = 1; i <= 5; i++) {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}
+```
+
+📌 Everything is written in **one line**, so it looks clean.
+
+---
+
+## 🧮 Example: Table of a Number
+
+```c
+#include <stdio.h>
+
+int main() {
+    int num, i;
+
+    printf("Enter number: ");
+    scanf("%d", &num);
+
+    for(i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+
+    return 0;
+}
+```
+
+---
+
+## ❌ Infinite Loop (Danger)
+
+A loop that **never stops**.
+
+### Example
+
+```c
+while(1) {
+    printf("Hello");
+}
+```
+
+📌 Happens when:
+
+* Condition never becomes false
+* Increment/decrement missing
+
+---
+
+## 🧠 When to Use Which Loop?
+
+| Situation              | Best Loop |
+| ---------------------- | --------- |
+| Condition-based        | while     |
+| Must run at least once | do–while  |
+| Fixed repetitions      | for       |
+
+---
+
+## ✅ Summary
+
+* Loops save time and code
+* 3 loops: while, do–while, for
+* Always control condition
+* Avoid infinite loops
 
 
 
